@@ -1,6 +1,11 @@
 <?php
 
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\ProductsController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\StoreController;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +18,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/home', [ProfileController::class, 'home'])->name('home');
+Route::get('/about', [AboutController::class, 'about'])->name('about');
+Route::get('/products', [ProductsController::class, 'products'])->name('products');
+Route::get('/store', [StoreController::class, 'store'])->name('store');
